@@ -2,15 +2,9 @@ import type { ClientOptions } from "./clientOptions.js"
 
 /**
  * Anilist API client object
- * @param {Object} config The config for the API
- * @param {string} config.apiKey Required to access the Anilist API
- * @param {string} config.endpoint The URL endpoint for the API. Default "https://graphql.anilist.co"
- * @param {int} config.timeout The time in ms until a timeout will occur. Default 5000
- * @param {int} config.retries The number of retries before failure. Default 0
- * @param {string} config.headers Any additional headers for the HTTP request. Default none
- * @param {bool} config.debug Whether or not the client is in debug mode. Default false
+ * @param {ClientOptions} options The config for the API
  */
-class aniClient {
+class AniClient {
 
     private readonly apiKey: string
     private readonly endpoint: string
@@ -69,4 +63,4 @@ class aniClient {
 
 
 
-export {aniClient}
+export {AniClient}
