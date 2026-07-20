@@ -16,7 +16,7 @@ class mediaQuery{
 
 }
 
-module.exports = {mediaQuery}
+export {mediaQuery}
 
 /* keeping this just in case
 {
