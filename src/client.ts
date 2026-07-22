@@ -1,4 +1,5 @@
 import type { ClientOptions } from "./clientOptions.js"
+import type { Query } from "./internal/Query.js"
 
 /**
  * Anilist API client object
@@ -37,7 +38,7 @@ class AniClient {
         };
       }
     
-      async fetchMedia(query) {
+      async fetchMedia<TResult>(query: Query<TResult>) {
         if (this.debug) {
           console.log("Executing query:", query.toString());
         }
@@ -45,19 +46,7 @@ class AniClient {
         
       }
 
-      generateQuery(genericQuery){
-       //return this.#generateQueryString(genericQuery.)
-      }
-      
-      generateQueryString(rawQuery){
-        let queryString = ""
-        queryString += `${rawQuery.header}{`;
-        rawQuery.fields.forEach(element => {
-            if(typeof element == "string") queryString += `${element} `
-            if(typeof element == "object") queryString += this.generateQueryString(element)
-        });
-        return `${queryString}}`;
-      }
+    
 
 }
 
