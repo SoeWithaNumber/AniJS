@@ -2,14 +2,15 @@ import type { Query } from "./internal/Query.js";
 import type { Media } from "./internal/TypeInterfaces.js";
 import { QueryBuilder } from "./QueryBuilder.js";
 
-class mediaQuery<RequestType = {}> implements Query{
-    private readonly queryData: QueryBuilder = new QueryBuilder;
+type AddField<T, K extends keyof Media> = T & Pick<Media, K>
 
-    public id():void{
-        this.queryData.addField("id")
-        type RequestType = Pick<Media, "id">
+class mediaQuery<TResult = {}> implements Query{
+    private readonly queryData: QueryBuilder<Media> = new QueryBuilder;
+
+    public id():mediaQuery<AddField<TResult, "id">>{
+        
     }
-    
+
     build(): string{
         
     }

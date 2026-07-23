@@ -1,4 +1,4 @@
-export class QueryBuilder{
+export class QueryBuilder<TResult>{
     public readonly queryFields = new Set<string>()
     
     addField(field: string): void{
