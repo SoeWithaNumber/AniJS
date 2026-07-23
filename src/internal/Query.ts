@@ -1,3 +1,3 @@
-export interface Query<TResult>{
+export interface Query{
     build(): string
 }
